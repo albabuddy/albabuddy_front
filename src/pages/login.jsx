@@ -8,7 +8,7 @@ export default function LoginPage() {
   return (
     <>
       <Helmet>
-        <title> Login | Minimal UI </title>
+        <title> 알바버디 | Login </title>
       </Helmet>
 
       <LoginView />

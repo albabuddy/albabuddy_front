@@ -1,17 +1,17 @@
 import { Helmet } from 'react-helmet-async';
 
-import { BlogView } from 'src/sections/blog/view';
+import { ProfileView } from 'src/sections/profile/view';
 
 // ----------------------------------------------------------------------
 
-export default function BlogPage() {
+export default function ProfilePage() {
   return (
     <>
       <Helmet>
-        <title> 알바버디 | Blog </title>
+        <title> 알바버디 | Profile </title>
       </Helmet>
 
-      <BlogView />
+      <ProfileView />
     </>
   );
 }

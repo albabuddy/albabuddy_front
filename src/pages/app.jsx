@@ -8,7 +8,7 @@ export default function AppPage() {
   return (
     <>
       <Helmet>
-        <title> Dashboard | Minimal UI </title>
+        <title> 알바버디 | Dashboard </title>
       </Helmet>
 
       <AppView />

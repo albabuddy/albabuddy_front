@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
@@ -17,14 +18,17 @@ const MENU_OPTIONS = [
   {
     label: 'Home',
     icon: 'eva:home-fill',
+    move: '/',
   },
   {
     label: 'Profile',
     icon: 'eva:person-fill',
+    move: '/profile',
   },
   {
     label: 'Settings',
     icon: 'eva:settings-2-fill',
+    move: '/',
   },
 ];
 
@@ -32,13 +36,15 @@ const MENU_OPTIONS = [
 
 export default function AccountPopover() {
   const [open, setOpen] = useState(null);
+  const navigate = useNavigate();
 
   const handleOpen = (event) => {
     setOpen(event.currentTarget);
   };
 
-  const handleClose = () => {
+  const handleClose = (move) => {
     setOpen(null);
+    navigate(move);
   };
 
   return (
@@ -95,7 +101,7 @@ export default function AccountPopover() {
         <Divider sx={{ borderStyle: 'dashed' }} />
 
         {MENU_OPTIONS.map((option) => (
-          <MenuItem key={option.label} onClick={handleClose}>
+          <MenuItem key={option.label} onClick={() => handleClose(option.move)}>
             {option.label}
           </MenuItem>
         ))}
